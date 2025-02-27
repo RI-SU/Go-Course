@@ -11,6 +11,9 @@ type sms struct {
 }
 
 func tagMessages(messages []sms, tagger func(sms) []string) []sms {
+	/* can use for i, message := range {
+		messages[i].tags = tagger(message)
+	} */
 	for i := 0; i < len(messages); i++ {
 		messages[i].tags = tagger(messages[i])
 	}
